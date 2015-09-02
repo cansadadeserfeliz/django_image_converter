@@ -1,0 +1,7 @@
+# Framework
+Django==1.8.4
+
+# Libs
+
+
+# Django-specific libraries
