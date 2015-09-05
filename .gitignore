@@ -59,6 +59,8 @@ target/
 # DB
 *.sqlite3
 
+celeryev.pid
+
 # Configuration files
 /app/local_settings.py
 .requirements_timestamp
@@ -66,3 +68,7 @@ target/
 .tags
 .tags_sorted_by_file
 .env
+
+# Static
+uploads/
+static/

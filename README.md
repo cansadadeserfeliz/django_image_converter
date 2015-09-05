@@ -12,3 +12,4 @@
 Run celery worker:
 
     ./manage.py celery worker --loglevel=info
+    ./manage.py celerycam

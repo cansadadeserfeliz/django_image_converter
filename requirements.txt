@@ -4,7 +4,9 @@ Django==1.8.4
 # Libs
 Pillow==2.9.0
 redis==2.10.3
+SQLAlchemy==1.0.8
 
 # Django-specific libraries
 django-celery==3.1.16
 django-crispy-forms==1.5.1
+django-redis-cache==1.6.0

@@ -1,8 +1,49 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
+{% load crispy_forms_tags converter_tags %}
 
 {% block content %}
 	<h1>Image converter</h1>
 
     {% crispy form %}
+
+    <a href="{{ request.path }}" class="btn btn-success">
+        <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+        Refresh
+    </a>
+
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Received at</th>
+                <th>Status</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.task_id }}</td>
+                <td>{{ task.tstamp }}</td>
+                <td>{{ task|colored_state }}</td>
+                <td>
+                {% if task.result %}
+                    {% if task.state == task_states.SUCCESS %}
+                        <img src="{{ MEDIA_URL }}{{ task.result }}" height="100">
+                        <a href="{{ MEDIA_URL }}{{ task.result }}" target="_blank" title="Download">
+                            <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+                        </a>
+                    {% else %}
+                        {{ task.result }}
+                    {% endif %}
+                {% endif %}
+                </td>
+            </tr>
+        {% empty %}
+            <tr><td colspan="100">No tasks found</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
 {% endblock %}
