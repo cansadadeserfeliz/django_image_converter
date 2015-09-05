@@ -30,8 +30,7 @@
                 <td>
                 {% if task.result %}
                     {% if task.state == task_states.SUCCESS %}
-                        <img src="{{ MEDIA_URL }}{{ task.result }}" height="100">
-                        <a href="{{ MEDIA_URL }}{{ task.result }}" target="_blank" title="Download">
+                        <a href="{{ task|get_task_url }}" target="_blank" title="Download">
                             <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
                         </a>
                     {% else %}
