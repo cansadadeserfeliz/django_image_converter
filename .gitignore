@@ -58,3 +58,11 @@ target/
 
 # DB
 *.sqlite3
+
+# Configuration files
+/app/local_settings.py
+.requirements_timestamp
+.idea
+.tags
+.tags_sorted_by_file
+.env
