@@ -16,4 +16,4 @@ Run celery worker:
     
 ## Screenshots
 
-![](https://habrastorage.org/files/716/486/b39/716486b395da4273bf38515b5edb995a.png)
+![](https://habrastorage.org/files/e80/8e6/7df/e808e67df6a64802bb7643916be9fbae.png)
