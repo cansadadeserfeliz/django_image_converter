@@ -1,5 +1,3 @@
-import uuid
-
 from django.views.generic import FormView
 from django.core.urlresolvers import reverse_lazy
 from django.contrib import messages
@@ -26,8 +24,7 @@ class ConverterFormView(FormView):
 
     def form_valid(self, form):
         image = form.cleaned_data['image']
-        filename = '{0}.jpg'.format(uuid.uuid4())
-        task_id = task_convert_image.delay(image.file, filename)
+        task_id = task_convert_image.delay(image.file)
 
         messages.success(
             self.request,
