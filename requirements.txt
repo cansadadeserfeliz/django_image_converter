@@ -1,5 +1,5 @@
 # Framework
-Django==1.8.4
+Django==2.2.24
 
 # Libs
 Pillow==8.3.2
